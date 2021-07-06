@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Travel Planner</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Antic+Didone&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&family=Playfair+Display&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="backdrop">
+    </div>
+    <div class="loader">
+        <img src="../static/spinner.svg" alt="spinner">
+
+    </div>
+    <header>
+        <div class="header__titlecontainer">
+            <h1 class="header__title"> Travel Planner</h1>
+
+        </div>
+
+        <div class="container__new-trip">
+            <button class="button-new-trip" onclick="window.location.reload()"> NEW TRIP +</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="section-form-box active">
+            <form class="trip-info" onsubmit="Client.handleSubmit(event)" novalidate>
+                <h2>Trip Details</h2>
+                <span id="form-error"></span>
+                <label for="location"> Trip Destination (required)</label>
+                <input id="location" pattern="[a-zA-Z\s]+" type="text" name="location" data-camelcase="location" required>
+                <label for="departure date">Departure date (required):</label>
+                <input type="date" id="start-date" name="departure date" data-camelcase="startDate" min="2021-07-10" required>
+                <label for="trip-end">Return date:</label>
+                <input type="date" id="return-date" name="arrival date" data-camelcase="endDate">
+
+                <div class="button-form">
+                    <button type="submit">SUBMIT </button>
+                </div>
+            </form>
+        </section>
+
+        <section class="section-trip-details">
+            <div class="section-trip-details__header">
+                <h1>Boarding Pass</h1>
+            </div>
+            <div class="content__trip-details">
+                <div class="content__container__text__trip-details">
+                    <div class="content__container__text__city-departure">
+                        <h3> CITY </h4>
+                            <h4> UNKNOWN </h4>
+                    </div>
+                    <div class="content__container__text__country-departure">
+                        <h3> COUNTRY </h3>
+                        <h4> XX </h4>
+                    </div>
+
+
+                    <div class="content__container__text__departure-date">
+                        <h3> DEPARTURE DATE</h3>
+                        <h4> XX/25/54 </h4>
+
+
+                    </div>
+                    <div class="content__container__text__arrival-date">
+                        <h3> ARRIVAL DATE </h4>
+                            <h4> XX/25/54 </h4>
+                    </div>
+                    <div class="content__container__text__weather">
+                        <h3> UNKNOWN WEATHER</h4>
+                            <h4 class="weather-description"> UNKNOWN</h4>
+                            <h4 class="weather-temperature"> MIN 45ºC - MAX 45ºC </h4>
+
+                    </div>
+                    <div class="content__container__text__trip-length">
+                        <h3> TRIP LENGTH </h4>
+                            <h4> X DAYS</h4>
+                    </div>
+
+                </div>
+
+                <div class="content__container__image__trip-details">
+                    <img src="../static/not_found.png">
+                </div>
+            </div>
+
+            </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+
+    </footer>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js');
+            });
+        }
+    </script>
+</body>
+
+</html>

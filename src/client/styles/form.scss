@@ -1,0 +1,105 @@
+    .section-form-box {
+        display: none;
+        &.active {
+            display: block;
+        }
+    }
+    
+    form {
+        border-radius: 3px;
+        padding: 40px;
+        font-size: 1.2em;
+        width: 50%;
+        margin-left: 5%;
+        background: whitesmoke;
+        color: #02040f;
+        font-weight: 600;
+        font-family: 'Quicksand', serif;
+        input {
+            padding: 0.25em 0 0 0;
+            width: 100%;
+            line-height: 16px;
+            box-sizing: border-box;
+            border: 0;
+            /* border-radius: 0.25rem; */
+            font-size: 1em;
+            margin: 0.5em 0;
+            background: transparent;
+            border-bottom: solid 2px black;
+            color: #585353f5;
+            font-family: 'QuickSand', serif;
+            &.error {
+                background: #ffa07a6e;
+                margin: 0.5em 0 1em 0;
+            }
+        }
+        h2 {
+            font-size: 2em;
+            margin-bottom: 1em;
+            font-family: 'Bebas Neue', cursive;
+        }
+        span {
+            display: none;
+            font-size: 0.9em;
+            font-weight: bold;
+            margin: 1em 0;
+            &.active {
+                display: block;
+            }
+        }
+        #form-error {
+            &.active {
+                display: block;
+            }
+            display: none;
+            .input-error {
+                color: #d10c0c;
+                margin: 0.5em 0 0 0;
+            }
+        }
+    }
+    
+    .button-form {
+        display: flex;
+        justify-content: flex-end;
+        font-family: 'Bebas Neue', cursive;
+        button {
+            font-weight: 600;
+            background-color: #02040f;
+            width: 30%;
+            text-align: center;
+            padding: 15px;
+            margin: 2em 0 0 0;
+            border: 0px;
+            margin-top: 10px;
+            color: aliceblue;
+            font-size: 1em;
+            font-family: 'Bebas Neue', cursive;
+            &:hover {
+                background-color: #76bed5;
+            }
+        }
+    }
+    
+    @media (max-width:701px) {
+        form {
+            font-size: 1.3em;
+            padding: 0.9em 0.6em 0.8em 0.6em;
+            width: 90%;
+            margin: auto;
+        }
+        #section-form-box {
+            width: 90%;
+        }
+        form input {
+            padding: 0.8em 0.3em;
+            width: 100%;
+            line-height: 16px;
+            box-sizing: border-box;
+            border: 0;
+            border-radius: 0.25rem;
+            margin: 1em 0 1em;
+            background: white;
+            font-size: 0.8em;
+        }
+    }

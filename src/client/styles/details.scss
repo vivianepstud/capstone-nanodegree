@@ -1,0 +1,94 @@
+    .section-trip-details {
+        border-radius: 3px;
+        font-size: 1.2em;
+        width: 80%;
+        margin: 0 auto;
+        background: whitesmoke;
+        color: #02040f;
+        font-weight: 600;
+        display: none;
+        font-family: 'Source Sans Pro', serif;
+        border-radius: 20px;
+        &.active {
+            display: block;
+        }
+        h2 {
+            font-size: 2em;
+            margin-bottom: 0.5em;
+        }
+        .header__trip-details {
+            font-family: 'Bebas Neue', cursive;
+        }
+        .content__trip-details {
+            display: flex;
+            color: black;
+        }
+        .content__container__image__trip-details {
+            width: 35%;
+            img {
+                width: 100%;
+                float: right;
+                max-height: 250px;
+                object-fit: none;
+                border: solid 10px white;
+            }
+        }
+        .content__container__text__trip-details {
+            margin: 0.5em 1em;
+            display: grid;
+            grid-template-columns: repeat(2, 45%);
+            grid-template-rows: repeat(3, 33%);
+            width: 60%;
+            h3 {
+                font-size: 1.25em;
+                margin: 0 0 0.5em 0;
+                font-weight: 600;
+            }
+            h4 {
+                font-size: 1em;
+                margin: 0 0 0.25em 0;
+                font-weight: 100;
+            }
+        }
+        .section-trip-details__header {
+            background: black;
+            padding: 0.5em;
+            font-family: 'Bebas Neue';
+            color: white;
+            font-size: 1.5em;
+            border-radius: 20px 20px 0 0;
+        }
+        .content__container__text__trip-length,
+        .content__container__text__arrival-date {
+            visibility: hidden;
+            &.active {
+                visibility: visible;
+            }
+        }
+    }
+    
+    @media (max-width: 701px) {
+        .section-trip-details {
+            width: 90%;
+            .content__trip-details {
+                display: block;
+                color: black;
+            }
+            .content__container__text__trip-details {
+                width: 100%;
+                grid-gap: 10px;
+            }
+            .content__container__image__trip-details {
+                width: 100%;
+                margin: 2em 0 1em 0;
+                img {
+                    width: 100%;
+                    margin: 0;
+                    max-height: 250px;
+                    object-fit: none;
+                    margin: 1em 0 1em 0;
+                    float: none;
+                }
+            }
+        }
+    }
